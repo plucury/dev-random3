@@ -1,7 +1,7 @@
 <nav class="widget">
   <h3>Tags</h3>
     <ul class="tagcloud">
-    {% for tag in tag_cloud %}
+    {% for tag in tags %}
         <li class="tag-{{ tag.1 }}"><a href="/tag/{{ tag.0 }}.html">{{ tag.0 }}</a></li>
     {% endfor %}
     </ul>

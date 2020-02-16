@@ -23,10 +23,10 @@
           </a>
         </h1>
         <div class="meta">
-            Dans «<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>» 
+            Dans «<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>»
             par <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author}}</a>
             {% if article.translations %}
-            &nbsp;&nbsp; Langues: 
+            &nbsp;&nbsp; Langues:
             <a href="{{ SITEURL }}/{{ article.url }}">{{ article.lang or DEFAULT_LANG }}</a>
               {% for translation in article.translations %}
             <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
@@ -35,12 +35,12 @@
             Mots-clés: {% for tag in article.tags %} #<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% endfor %}
         </div>
       </header>
-      <div class="post-content"> 
+      <div class="post-content">
         {{ article.content}}
       </div>
       <footer class="post-footer">
         <div class="meta">
-            Posté dans «<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>» 
+            Posté dans «<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>»
             par <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author}}</a><br />
             Mots-clés: {% for tag in article.tags %} #<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% endfor %}
         </div>
@@ -51,7 +51,7 @@
 	      data-url="{{ SITEURL }}/{{ article.url }}"
 	      data-hashtags="{{ article.tags|join(', ') }}"><img src="{{ SITEURL }}/theme/img/twitter.png" style="border:0;display: inline-block;vertical-align: middle;" alt="Twitter" />Twitter</a>
 	{% if ADDRESS_COM %}| <a href="mailto:{{ ADDRESS_COM }}?subject=Commentaire à propos de {{ article.title }}">Commentaire</a>{% endif %}
-        
+
         {% if article.comments %}
         <hr />
 		{% for comment in article.comments recursive %}
@@ -61,7 +61,7 @@
 				{% set marginLeft = 50 %}
 			{% endif %}
 		<article id="comment-{{comment.slug}}">
-                
+
                 <h4>{{ comment.author }}</h4>
                 <p>Posted on <abbr class="published" title="{{ comment.date.isoformat() }}">{{ comment.locale_date }}</abbr> - <a href="{{ SITEURL }}/{{ article.url }}#comment-{{comment.slug}}" rel="bookmark" title="Permalink to this comment">Permalink</a></p>
                 {{ comment.metadata['my_custom_metadata'] }}
@@ -72,7 +72,7 @@
 		</article>
 		{% endfor %}
 	{% endif %}
-      
+
       </footer>
 
       {% if DISQUS_SITENAME %}

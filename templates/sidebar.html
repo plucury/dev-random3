@@ -1,10 +1,7 @@
     <aside class="page-sidebar">
       <nav class="widget">
-      <h3>Site</h3>
-      
-	<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-		<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
-	</a>
+      <!-- <h3>Site</h3> -->
+
       {% if LANGUAGES %}
        {% include "sidebar.d/lang.html" %}
        {% endif %}
@@ -25,25 +22,29 @@
 
 <!--	<br />-->
 
-      
+
 
       {# by moving piece of three code lines, you can move up, down or remove each widget #}
-      
+
       {% if categories %}
       {% include "sidebar.d/categories.html" %}
       {% endif %}
- 
+
       {% if SOCIAL %}
       {% include "sidebar.d/social.html" %}
       {% endif %}
-       
 
-       
+
+
        {% if LINKS %}
-       {% include "sidebar.d/links.html" %} 
+       {% include "sidebar.d/links.html" %}
        {% endif %}
-       
+
        {% include "sidebar.d/tag_cloud.html" %}
-       
+
+      <!-- <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+      </a> -->
+
        <!--</nav>-->
     </aside>
