@@ -74,6 +74,7 @@ img, table, pre {
     padding: .25em;
     border: thin solid silver;
     overflow: auto;
+    max-width: 800px;
 }
 
 figure {
