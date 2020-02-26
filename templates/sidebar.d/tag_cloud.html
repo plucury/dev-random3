@@ -2,7 +2,7 @@
   <h3>Tags</h3>
     <ul class="tagcloud">
     {% for tag in tags %}
-        <li class="tag-{{ tag.1 }}"><a href="/tag/{{ tag.0 }}.html">{{ tag.0 }}</a></li>
+        <li class="tag-{{ tag }}"><a href="{{ tag.0.url }}">{{ tag.0 }}</a></li>
     {% endfor %}
     </ul>
 </nav>
