@@ -6,15 +6,15 @@
     <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
-    
+
     <link rel="alternate" type="application/atom+xml"
                            title="{{ SITENAME }} — Flux Atom"
-                           href="{{ SITEURL }}/{{ FEED }}" /> 
-    
+                           href="{{ SITEURL }}/{{ FEED }}" />
+
     {% if FEED_RSS %}
     <link rel ="alternate" type="application/rss+xml"
                            title="{{ SITENAME }} — Flux RSS"
-                           href="{{ SITEURL }}/{{ FEED_RSS }}" /> 
+                           href="{{ SITEURL }}/{{ FEED_RSS }}" />
     {% endif %}
     <!--[if lte IE 8]><script src="{{ SITEURL }}/theme/js/html5shiv.js"></script><![endif]-->
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
@@ -23,12 +23,24 @@
 	<a href="{{ SPAMTRAP }}"></a>
     {% endif %}
 
+    {% if GOOGLE_ANALYTICS %}
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+      try {
+      var pageTracker = _gat._getTracker("{{GOOGLE_ANALYTICS}}");
+      pageTracker._trackPageview();
+      } catch(err) {}</script>
+    {% endif %}
+
   {% endblock headers %}
   </head>
   <body>
     <div class="page">
       <header class="page-head">
-      
+
         <h1>
           <a href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
         </h1>
@@ -39,7 +51,7 @@
         {% endblock content %}
       </div>
 
-      {% include "sidebar.html" %} 
+      {% include "sidebar.html" %}
 
       <footer class="page-footer">
         <p> {{ FOOTER_TEXT or 'Porté par <a href="http://pelican.readthedocs.org">Pelican</a> et <a href="http://www.openbsd.org/">OpenBSD</a>' }}</p>
