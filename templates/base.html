@@ -23,18 +23,6 @@
 	<a href="{{ SPAMTRAP }}"></a>
     {% endif %}
 
-    {% if GOOGLE_ANALYTICS %}
-      <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-      </script>
-      <script type="text/javascript">
-      try {
-      var pageTracker = _gat._getTracker("{{GOOGLE_ANALYTICS}}");
-      pageTracker._trackPageview();
-      } catch(err) {}</script>
-    {% endif %}
-
   {% endblock headers %}
   </head>
   <body>
@@ -57,5 +45,6 @@
         <p> {{ FOOTER_TEXT or 'Porté par <a href="http://pelican.readthedocs.org">Pelican</a> et <a href="http://www.openbsd.org/">OpenBSD</a>' }}</p>
       </footer>
     </div>
+    {% include "gg_analytics.html" %}
   </body>
 </html>
